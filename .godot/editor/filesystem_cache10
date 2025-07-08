@@ -1,0 +1,8 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1751933534
+README.md::TextFile::-1::1751931459::0::1::::<><><>0<>0<><>::
+::res://Scene/::1751933524
+compute_shader.glsl::RDShaderFile::7585278060423324396::1751798422::1751933535::1::::<><><>0<>0<>d38c6666a6a4c2eb9be87f876e6d9575<>res://.godot/imported/compute_shader.glsl-dc6005e2e4709aa098ce9511183875e8.res::
+main.gd::GDScript::220767166663684288::1751933429::0::1::::<>Node<><>0<>0<><>::
+main.tscn::PackedScene::1512722494201656162::1751933509::0::1::::<><><>0<>0<><>::uid://de7adpe5wg7y::::res://Scene/main.gd<>uid://6xhmh2j4jsia::::res://Scene/matrix.gdshader
+matrix.gdshader::Shader::2223781699419820368::1751933524::0::1::::<><><>0<>0<><>::

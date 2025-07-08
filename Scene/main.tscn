@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://vs1k3fchwgfa"]
+
+[ext_resource type="Script" uid="uid://de7adpe5wg7y" path="res://Scene/main.gd" id="1_6jgxj"]
+[ext_resource type="Shader" uid="uid://6xhmh2j4jsia" path="res://Scene/matrix.gdshader" id="2_x22ro"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0024"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_elgsa"]
+shader = ExtResource("2_x22ro")
+shader_parameter/gridWidth = 0.0
+shader_parameter/gridHeight = 0.0
+
+[node name="Main" type="Control" node_paths=PackedStringArray("renderer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6jgxj")
+computeShader = "uid://dgcmolf78x11i"
+renderer = NodePath("Renderer")
+
+[node name="UI" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -974.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="UI"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxFlat_o0024")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o0024")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o0024")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o0024")
+toggle_mode = true
+text = "Start"
+
+[node name="HSlider" type="HSlider" parent="UI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+focus_mode = 0
+min_value = 1.0
+max_value = 30.0
+step = 0.1
+value = 1.0
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.25
+text = "Zoom: 1.0"
+vertical_alignment = 1
+
+[node name="Renderer" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_elgsa")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="toggled" from="UI/Button" to="." method="_on_button_toggled"]
+[connection signal="drag_ended" from="UI/HSlider" to="." method="_on_h_slider_drag_ended"]
+[connection signal="drag_started" from="UI/HSlider" to="." method="_on_h_slider_drag_started"]
+[connection signal="value_changed" from="UI/HSlider" to="." method="_on_h_slider_value_changed"]
