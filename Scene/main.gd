@@ -98,7 +98,7 @@ func _setup_shader():
 	shader = rd.shader_create_from_spirv(spirV)
 	pipeline = rd.compute_pipeline_create(shader)
 
-	inputTexture = _create_textures(inputImage  , DefaultTextureFormat, 0)
+	inputTexture = _create_textures(inputImage, DefaultTextureFormat, 0)
 	outputTexture = _create_textures(outputImage, DefaultTextureFormat, 1)
 	_create_size_buffer(size.x, size.y , 2)
 

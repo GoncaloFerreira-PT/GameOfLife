@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://vs1k3fchwgfa"]
+[gd_scene load_steps=6 format=3 uid="uid://vs1k3fchwgfa"]
 
 [ext_resource type="Script" uid="uid://de7adpe5wg7y" path="res://Scene/main.gd" id="1_6jgxj"]
 [ext_resource type="Shader" uid="uid://6xhmh2j4jsia" path="res://Scene/matrix.gdshader" id="2_x22ro"]
+[ext_resource type="Texture2D" uid="uid://nlai4lbe1by3" path="res://icon.svg" id="3_r34rm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0024"]
 draw_center = false
@@ -79,6 +80,7 @@ anchor_bottom = 1.0
 offset_top = 62.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_r34rm")
 
 [connection signal="toggled" from="UI/Button" to="." method="_on_button_toggled"]
 [connection signal="drag_ended" from="UI/HSlider" to="." method="_on_h_slider_drag_ended"]
